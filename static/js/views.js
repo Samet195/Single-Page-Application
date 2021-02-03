@@ -1,5 +1,5 @@
 export let views = {
-    "anasayfa": {
+    anasayfa: {
         title: "Anasayfa",
         content:
         `<div class="container">
@@ -7,7 +7,7 @@ export let views = {
              <p>Paragraf</p>
          </div>`
     },
-    "altsayfa1": {
+    altsayfa1: {
         title: "Sayfa 1",
         content:
         `<div class="container">
@@ -15,7 +15,7 @@ export let views = {
             <p>Paragraf</p>
         </div>`
     },
-    "altsayfa2": {
+    altsayfa2: {
         title: "Sayfa 2",
         content:
         `<div class="container">
