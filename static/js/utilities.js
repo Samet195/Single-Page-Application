@@ -1,1 +1,1 @@
-console.info("==================\nJavaScript is working!\n==================");export let doc=document,log=console.log,info=console.info,warn=console.warn,error=console.error;
+export let doc=document,log=console.log,info=console.info,warn=console.warn,error=console.error;info("==================\nJavaScript is working!\n==================")

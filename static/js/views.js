@@ -1,26 +1,20 @@
+function fetch_view(page) {
+    fetch(`./static/views/${page}.html`)
+        .then(response => response.text())
+        .then(html => views[page].content = html)
+}
+
 export let views = {
     anasayfa: {
         title: "Anasayfa",
-        content:
-        `<div class="container">
-             <h1>Anasayfa</h1>
-             <p>Paragraf</p>
-         </div>`
+        content: fetch_view("anasayfa")
     },
-    altsayfa1: {
+    sayfa1: {
         title: "Sayfa 1",
-        content:
-        `<div class="container">
-            <h1>Sayfa 1</h1>
-            <p>Paragraf</p>
-        </div>`
+        content: fetch_view("sayfa1")
     },
-    altsayfa2: {
+    sayfa2: {
         title: "Sayfa 2",
-        content:
-        `<div class="container">
-            <h1>Sayfa 2</h1>
-            <p>Paragraf</p>
-        </div>`
+        content: fetch_view("sayfa2")
     }
-};
+}
