@@ -31,4 +31,4 @@ li.forEach(
     )
 );
 
-document.onload = () => render("anasayfa");
+doc.onload = () => render("anasayfa");
