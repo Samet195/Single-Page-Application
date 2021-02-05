@@ -19,6 +19,7 @@ function render(page) {
     );
     /*********************************************************************************/
     doc.querySelector("main").innerHTML = view[page].content;
+    info(page, "rendered")
 }
 
 li.forEach(
@@ -30,4 +31,4 @@ li.forEach(
     )
 );
 
-render("anasayfa");
+document.onload = () => render("anasayfa");
