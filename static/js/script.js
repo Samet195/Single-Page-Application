@@ -1,13 +1,13 @@
-import { doc, log, info, warn, error } from "./utilities.js";
-import { views as view } from "./views.js";
+import { view } from "./views.js";
 
-let title = doc.querySelector("title").innerText;
-let sep = doc.querySelector("title").getAttribute("sep");
-let li = doc.querySelectorAll("nav>li");
+let title = document.querySelector("title").innerText;
+let sep = document.querySelector("title").getAttribute("sep");
+let li = document.querySelectorAll("nav>li");
 
 function render(page) {
-    doc.querySelector("title").innerText = title + " " + sep + " " + view[page].title;
-    /*********************************************************************************/
+    let data = view(page);
+    document.querySelector("title").innerText = title + " " + sep + " " + data.title;
+    /*******************************************************************************/
     li.forEach(
         item => {
             if (item.getAttribute("id") == page) {
@@ -17,18 +17,17 @@ function render(page) {
             }
         }
     );
-    /*********************************************************************************/
-    doc.querySelector("main").innerHTML = view[page].content;
-    info(page, "rendered")
+    /*******************************************************************************/
+    document.querySelector("main").innerHTML = data.content;
 }
 
 li.forEach(
     item => item.addEventListener(
         "click",
         () => {
-            render(item.getAttribute("id"))
+            render(item.id)
         }
     )
 );
 
-doc.onload = () => render("anasayfa");
+render("anasayfa");
