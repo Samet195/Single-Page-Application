@@ -1,7 +1,7 @@
 function fetch_view(page) {
     fetch(`./static/views/${page}.html`)
         .then(response => response.text())
-        .then(html => views[page].content = html)
+        .then(data => views[page].content = data)
 }
 
 export let views = {
