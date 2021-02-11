@@ -32,11 +32,13 @@ function render(page, data) {
     }
 }
 
-document.querySelectorAll("nav>li").forEach(
-    item => item.addEventListener(
-        "click",
-        () => get_view(item.id, render)
+window.onload = () => {
+    document.querySelectorAll("nav>li").forEach(
+        item => item.addEventListener(
+            "click",
+            () => get_view(item.id, render)
+        )
     )
-)
+}
 
 get_view("anasayfa", render)
