@@ -1,11 +1,15 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import webbrowser
 
+HOST, PORT = "localhost", 8000
+
 if __name__ == '__main__':
+  Server = HTTPServer((HOST, PORT), SimpleHTTPRequestHandler)
   try:
-    print(f"Server started at http://localhost:8000/\n{'=' * 40}")
+    print(f"Server started at http://{HOST}:{PORT}/")
+    print("=" * 40)
     webbrowser.open("http://localhost:8000/")
-    HTTPServer(("localhost", 8000), SimpleHTTPRequestHandler).serve_forever()
+    Server.serve_forever()
+
   except KeyboardInterrupt:
-    print("Server stopped")
-    exit()
+    Server.server_close
