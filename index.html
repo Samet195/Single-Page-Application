@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="TR">
+<html lang="en-US">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta http-equiv="Content-Language" content="tr-TR" />
+        <meta http-equiv="Content-Language" content="en-US" />
         <!---------------------------------->
-        <title sep="-">Site</title>
+        <title sep="-">Web Site</title>
         <!---------------------------------->
         <link href="./static/css/bootstrap.min.css" rel="stylesheet" />
-        <script src="./static/js/script.js"></script>
+        <link href="./static/css/style.css" rel="stylesheet" />
+        <script type="module" src="./static/js/script.js"></script>
     </head>
     <body>
-        <div class="alert alert-danger container" style="display: none; margin-top: 25px">
-            İnternet bağlantısı yok.
+        <div class="alert-danger container navbar-fixed-bottom">
+            No network connection.
         </div>
         <nav class="nav nav-pills container">
-            <li id="anasayfa" class="active"><a>AnaSayfa</a></li>
-            <li id="sayfa1"><a>Sayfa 1</a></li>
-            <li id="sayfa2"><a>Sayfa 2</a></li>
+            <li link="home" class="active"><a>Home</a></li>
+            <li link="page1"><a>Page 1</a></li>
+            <li link="page2"><a>Page 2</a></li>
         </nav>
         <main class="container"></main>
     </body>
