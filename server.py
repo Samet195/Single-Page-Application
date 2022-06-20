@@ -1,19 +1,26 @@
+#!/usr/bin/env python3
+# -*- coding:UTF-8 -*-
+
+""" Simple HTTP Server """
+
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import webbrowser
 
 HOST, PORT = "127.0.0.1", 8000
 
+
 def main():
-    Server = HTTPServer((HOST, PORT), SimpleHTTPRequestHandler)
+    """ Main Function """
+    server = HTTPServer((HOST, PORT), SimpleHTTPRequestHandler)
     try:
         print(f"Server started at http://{HOST}:{PORT}/")
         print("=" * 40)
         webbrowser.open(f"http://{HOST}:{PORT}/")
-        Server.serve_forever()
+        server.serve_forever()
 
     except (KeyboardInterrupt, EOFError):
-        Server.server_close()
+        server.server_close()
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()
